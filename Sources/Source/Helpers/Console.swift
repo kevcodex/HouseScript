@@ -55,4 +55,9 @@ class Console {
         
         return strData.trimmingCharacters(in: CharacterSet.newlines)
     }
+    
+    static func getInput(from question: String, styled: OutputStyle = .black) -> String {
+        Console.writeMessage(question, styled: styled)
+        return Console.getInput()
+    }
 }

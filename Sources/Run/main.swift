@@ -9,4 +9,5 @@
 
 import Source
 
-App.start()
+let app = App()
+app.start()
