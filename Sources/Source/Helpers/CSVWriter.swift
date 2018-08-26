@@ -9,9 +9,9 @@ import Foundation
 
 struct CSVWriter {
     
-    /// Adds a new column at the end. Append new columns by breaking out each row and then add each column in columns to the end of each row. Then rewrite the CSV with the new modified rows.
+    /// Adds a new column at the end. Append new columns by breaking out each row and then add each column in columns to the end of each row. Then rewrites the entire CSV with the new modified rows.
     /// - parameter columns: The new columns to be added. Takes in any object that conforms to CustomStringConvertible.
-    /// - complexity: O(3n^2)? where n is the number of rows in CSV.
+    /// - complexity: O(4n)? where n is the number of rows in the CSV.
     static func addNewColumns(_ columns: [CustomStringConvertible], to url: URL) throws {
 
         let columnsAsStrings = columns.map { $0.description }

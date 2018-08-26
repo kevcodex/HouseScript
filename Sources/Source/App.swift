@@ -6,6 +6,8 @@
 
 import Foundation
 
+// TODO: - Potentially parse out the map protobuf info, then I can get the listing ID by mapping against the property ID. See URL https://www.redfin.com/stingray/mobile/v2/gis-proto-mobile. It seems like I would need to input some info like coordinates and some filters into this URL.
+// TODO: - Determine days on market before pending and sold
 public class App {
     
     public init () {
@@ -38,13 +40,12 @@ public class App {
         }
         
         // MARK: - Hit Redfin Endpoint
-        var aHouseData: HouseData?
+        let houseData = HouseData()
         
         let runner = SwiftScriptRunner()
         runner.lock()
         
-        getHouseData(propertyID: propertyID, listingID: listingID) { data in
-            aHouseData = data
+        houseData.fetchData(propertyID: propertyID, listingID: listingID) { _ in
             runner.unlock()
         }
         
@@ -56,9 +57,8 @@ public class App {
         
         let csvFileURL = URL(fileURLWithPath: csvFilePath)
         
-        guard let houseData = aHouseData,
-            let belowTheFoldData = houseData.belowTheFoldData,
-            let aboveTheFoldData = houseData.aboveTheFoldData else {
+        guard let belowTheFoldData = houseData.belowTheFoldData,
+            let _ = houseData.aboveTheFoldData else {
                 Console.writeMessage("Missing Data", styled: .red)
                 return
         }
@@ -67,109 +67,29 @@ public class App {
         
         let streetAddress = publicRecordsInfo.addressInfo.street
         
-        let listingPrice = belowTheFoldData.payload.propertyHistoryInfo.events.first?.price ?? 0
+        let latestEvent = belowTheFoldData.payload.propertyHistoryInfo.events.first
+        let urlString = "https://www.redfin.com" + (latestEvent?.url ??  "")
+        let eventType = latestEvent?.eventType ?? .unknown
+        let eventDateString = latestEvent?.eventDateString ?? ""
+        let listingPrice = latestEvent?.price ?? 0
         
         let yearBuilt = publicRecordsInfo.basicInfo.yearBuilt
         
-        let lotSize = self.lotSize(from: aboveTheFoldData, belowTheFold: belowTheFoldData)
+        let lotSize = houseData.lotSize()
         
         let sqft = publicRecordsInfo.basicInfo.totalSqFt
         
-        let stories = self.stories(from: aboveTheFoldData)
+        let stories = houseData.stories()
         
         let bedCount = publicRecordsInfo.basicInfo.beds
         let bathCount = publicRecordsInfo.basicInfo.baths
         
         do {
-            let stringConvertibleArray: [CustomStringConvertible] = [streetAddress, listingPrice, yearBuilt, lotSize, sqft, stories, bedCount, bathCount]
+            let stringConvertibleArray: [CustomStringConvertible] = [streetAddress, eventType, eventDateString, urlString, listingPrice, yearBuilt, lotSize, sqft, stories, bedCount, bathCount]
 
             try CSVWriter.addNewColumns(stringConvertibleArray, to: csvFileURL)
         } catch {
-            print(error)
+            Console.writeMessage(error.localizedDescription, styled: .red)
         }
-    }
-    
-    /// - parameter propertyID: **Required**. You can find this at the end of the house URL. E.g. https://www.redfin.com/CA/Encinitas/1943-Village-Wood-Rd-92024/home/**6390569**
-    /// - parameter listingID: ListingID does not require to have a value. I'm not sure where this value is taken from but You can find it in the param request in Charles. It just adds a bit more info if you include it.
-    private func getHouseData(propertyID: String, listingID: String, completion: @escaping (HouseData) -> Void) {
-        
-        let dispatchGroup = DispatchGroup()
-        
-        var aboveTheFold: AboveTheFold?
-        var belowTheFold: BelowTheFold?
-        
-        dispatchGroup.enter()
-        NetworkRequest.callAboveTheFold(
-            urlString: "https://www.redfin.com/stingray/mobile/api/v1/home/details/aboveTheFold",
-            propertyID: propertyID,
-            listingID: listingID,
-            completion: { result in
-                switch result {
-                    
-                case .success(let response):
-                    aboveTheFold = response
-                case .failure(let error):
-                    Console.writeMessage(error.localizedDescription, styled: .red)
-                }
-                dispatchGroup.leave()
-        })
-        
-        dispatchGroup.enter()
-        NetworkRequest.callBelowTheFold(
-            urlString: "https://www.redfin.com/stingray/mobile/api/v1/home/details/belowTheFold",
-            propertyID: propertyID,
-            listingID: listingID,
-            completion: { result in
-                switch result {
-                    
-                case .success(let response):
-                    belowTheFold = response
-                case .failure(let error):
-                    Console.writeMessage(error.localizedDescription, styled: .red)
-                }
-                
-                dispatchGroup.leave()
-        })
-        
-        dispatchGroup.notify(queue: .main) {
-            let houseData = HouseData(aboveTheFoldData: aboveTheFold, belowTheFoldData: belowTheFold)
-            completion(houseData)
-        }
-    }
-    
-    private func lotSize(from aboveTheFold: AboveTheFold?, belowTheFold: BelowTheFold?) -> Int {
-        guard let aboveTheFold = aboveTheFold,
-            let belowTheFold = belowTheFold else {
-                return 0
-        }
-        
-        var lotSize = belowTheFold.payload.publicRecordsInfo.basicInfo.lotSqFt
-        
-        if lotSize != 0 {
-            return lotSize
-        }
-        
-        for admentities in aboveTheFold.payload.mainHouseInfo.selectedAmenities {
-            if admentities.header == "Lot Size" {
-                let lotSizeString = admentities.content.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted)
-                lotSize = Int(lotSizeString) ?? 0
-            }
-        }
-        
-        return lotSize
-    }
-    
-    private func stories(from aboveTheFold: AboveTheFold?) -> String {
-        guard let aboveTheFold = aboveTheFold else {
-            return ""
-        }
-        
-        for admentities in aboveTheFold.payload.mainHouseInfo.selectedAmenities {
-            if admentities.header == "Stories" {
-                return admentities.content
-            }
-        }
-        
-        return ""
     }
 }
