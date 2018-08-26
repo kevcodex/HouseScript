@@ -22,11 +22,11 @@ struct NetworkRequest {
     }()
     
     static func callAboveTheFold(urlString: String,
-                                 listingID: String,
                                  propertyID: String,
+                                 listingID: String?,
                                  completion: @escaping (Result<AboveTheFold, NetworkError>) -> Void) {
         
-        guard let urlRequest = constructURLRequest(urlString: urlString, listingID: listingID, propertyID: propertyID) else {
+        guard let urlRequest = constructURLRequest(urlString: urlString, propertyID: propertyID, listingID: listingID) else {
             completion(Result(error: .invalidURL))
             return
         }
@@ -58,10 +58,10 @@ struct NetworkRequest {
     }
     
     static func callBelowTheFold(urlString: String,
-                                 listingID: String,
                                  propertyID: String,
+                                 listingID: String?,
                                  completion: @escaping (Result<BelowTheFold, NetworkError>) -> Void) {
-        guard let urlRequest = constructURLRequest(urlString: urlString, listingID: listingID, propertyID: propertyID) else {
+        guard let urlRequest = constructURLRequest(urlString: urlString, propertyID: propertyID, listingID: listingID) else {
             completion(Result(error: .invalidURL))
             return
         }
@@ -94,14 +94,14 @@ struct NetworkRequest {
     }
     
     private static func constructURLRequest(urlString: String,
-                                     listingID: String,
-                                     propertyID: String) -> URLRequest? {
+                                            propertyID: String,
+                                            listingID: String?) -> URLRequest? {
         
         let accessLevelQuery = URLQueryItem(name: "accessLevel", value: "3")
-        let listingIDQuery = URLQueryItem(name: "listingId", value: listingID)
         let propertyIDQuery = URLQueryItem(name: "propertyId", value: propertyID)
+        let listingIDQuery = URLQueryItem(name: "listingId", value: listingID)
         
-        let queryItems = [accessLevelQuery, listingIDQuery, propertyIDQuery]
+        let queryItems = [accessLevelQuery, propertyIDQuery, listingIDQuery]
         
         var urlString = urlString
         var urlComponents = URLComponents(string: urlString)

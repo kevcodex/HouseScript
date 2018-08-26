@@ -12,10 +12,12 @@ struct BelowTheFold: Codable {
     
     struct Payload: Codable {
         let publicRecordsInfo: PublicRecordInfo
+        let propertyHistoryInfo: PropertyHistoryInfo
         
         struct PublicRecordInfo: Codable {
             let basicInfo: BasicInfo
-            let mortgageCalculatorInfo: MortgageCalculatorInfo
+            let addressInfo: AddressInfo
+            let mortgageCalculatorInfo: MortgageCalculatorInfo?
             
             struct BasicInfo: Codable {
                 let beds: Int
@@ -26,8 +28,24 @@ struct BelowTheFold: Codable {
                 let lotSqFt: Int
             }
             
+            struct AddressInfo: Codable {
+                let street: String
+                let city: String
+                let state: String
+                let zip: String
+            }
+            
             struct MortgageCalculatorInfo: Codable {
                 let listingPrice: Int
+            }
+        }
+        
+        struct PropertyHistoryInfo: Codable {
+            let events: [Event]
+
+            struct Event: Codable {
+                let price: Int?
+                let url: String?
             }
         }
     }

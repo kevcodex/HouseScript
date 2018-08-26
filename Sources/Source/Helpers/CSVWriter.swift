@@ -9,22 +9,28 @@ import Foundation
 
 struct CSVWriter {
     
-    /// Append new columns by breaking out each row and then add each column in columns to the end of each row. Then rewrite the CSV with the new modified rows.
-    /// - parameter columns: The new columns to be added.
+    /// Adds a new column at the end. Append new columns by breaking out each row and then add each column in columns to the end of each row. Then rewrite the CSV with the new modified rows.
+    /// - parameter columns: The new columns to be added. Takes in any object that conforms to CustomStringConvertible.
     /// - complexity: O(3n^2)? where n is the number of rows in CSV.
-    static func addNewColumns(_ columns: [String], to url: URL) throws {
-        let csvString = try String(contentsOf: url, encoding: .utf8)
+    static func addNewColumns(_ columns: [CustomStringConvertible], to url: URL) throws {
+
+        let columnsAsStrings = columns.map { $0.description }
+        
+        var csvString = ""
+        if FileManager.default.fileExists(atPath: url.path) {
+            csvString = try String(contentsOf: url, encoding: .utf8)
+        }
         
         let csvRows = csvString.split(separator: "\n").map { String($0) }
         
         var newCSVRows: [String] = []
         
         if csvRows.isEmpty {
-            newCSVRows.append(contentsOf: columns)
+            newCSVRows.append(contentsOf: columnsAsStrings)
         } else {
             csvRows.enumerated().forEach { (index, rowString) in
                 var newRowString = rowString
-                let newColumn = columns[index]
+                let newColumn = columnsAsStrings[index]
                 newRowString.append(",\(newColumn)")
                 newCSVRows.append(newRowString)
             }
@@ -40,10 +46,12 @@ struct CSVWriter {
     }
     
     /// Add new rows at the end of the file.
+    /// - parameter rows: The new rows to be added. Takes in any object that conforms to CustomStringConvertible.
     /// - complexity: O(n) where n is the number of rows to add
-    static func addNewRows(_ rows: [String], to url: URL) throws {
+    static func addNewRows(_ rows: [CustomStringConvertible], to url: URL) throws {
+        
         for row in rows {
-            guard let data = row.data(using: .utf8) else {
+            guard let data = row.description.data(using: .utf8) else {
                 continue
             }
             

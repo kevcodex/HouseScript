@@ -14,12 +14,7 @@ struct AboveTheFold: Codable {
         let mainHouseInfo: MainHouseInfo
         
         struct MainHouseInfo: Codable {
-            let propertyAddress: PropertyAddress
             let selectedAmenities: [SelectedAmenities]
-            
-            struct PropertyAddress: Codable {
-                let streetNumber: String
-            }
             
             struct SelectedAmenities: Codable {
                 let header: String
