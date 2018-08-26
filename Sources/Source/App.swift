@@ -33,22 +33,29 @@ public class App {
         }
 
         // MARK: - Hit Redfin Endpoint
+        var houseData: HouseData?
+        
         let runner = SwiftScriptRunner()
         runner.lock()
         
-        getHouseData {
+        getHouseData { data in
+            houseData = data
             runner.unlock()
         }
         
-        
         runner.wait()
         
+        
+        print(FileManager.default.currentDirectoryPath)
         // MARK: - Store into CSV
     }
     
-    private func getHouseData(completion: @escaping () -> Void) {
+    private func getHouseData(completion: @escaping (HouseData) -> Void) {
         
         let dispatchGroup = DispatchGroup()
+        
+        var aboveTheFold: AboveTheFold?
+        var belowTheFold: BelowTheFold?
         
         dispatchGroup.enter()
         NetworkRequest.callAboveTheFold(
@@ -59,7 +66,7 @@ public class App {
                 switch result {
                     
                 case .success(let response):
-                    print(response)
+                    aboveTheFold = response
                 case .failure(let error):
                     Console.writeMessage(error.localizedDescription, styled: .red)
                 }
@@ -75,7 +82,7 @@ public class App {
                 switch result {
                     
                 case .success(let response):
-                    print(response)
+                    belowTheFold = response
                 case .failure(let error):
                     Console.writeMessage(error.localizedDescription, styled: .red)
                 }
@@ -84,7 +91,8 @@ public class App {
         })
         
         dispatchGroup.notify(queue: .main) {
-            completion()
+            let houseData = HouseData(aboveTheFoldData: aboveTheFold, belowTheFoldData: belowTheFold)
+            completion(houseData)
         }
     }
 }
