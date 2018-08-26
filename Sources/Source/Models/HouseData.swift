@@ -91,7 +91,8 @@ extension HouseData {
         
         for admentities in aboveTheFold.payload.mainHouseInfo.selectedAmenities {
             if admentities.header == "Lot Size" {
-                let lotSizeString = admentities.content.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted)
+                let lotSizeString = admentities.content.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890").inverted).replacingOccurrences(of: ",", with: "")
+
                 lotSize = Int(lotSizeString) ?? 0
             }
         }
