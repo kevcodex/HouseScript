@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Clean
 struct BelowTheFold: Codable {
     let payload: Payload
     
@@ -96,11 +97,16 @@ struct BelowTheFold: Codable {
                         let lowercased = string.lowercased()
                         
                         // Different strings of potential active types
-                        let activeArray = ["active", "listed", "changed"]
+                        let activeArrayStrings = ["active", "listed", "changed"]
                         
-                        if activeArray.contains(lowercased) {
-                            self = .active
-                        } else if lowercased.contains("pending") {
+                        for string in activeArrayStrings {
+                            if lowercased.contains(string) {
+                                self = .active
+                                return
+                            }
+                        }
+                        
+                        if lowercased.contains("pending") {
                             self = .pending
                         } else if lowercased.contains("sold") {
                             self = .sold

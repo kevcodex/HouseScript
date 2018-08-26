@@ -21,8 +21,14 @@ struct CSVWriter {
             csvString = try String(contentsOf: url, encoding: .utf8)
         }
         
-        let csvRows = csvString.split(separator: "\n").map { String($0) }
-        
+        // Works, but could be better
+        var csvRows: [String] = []
+        if csvString.contains("\r\n") {
+            csvRows = csvString.split(separator: "\r\n").map { String($0) }
+        } else if csvString.contains("\n") {
+            csvRows = csvString.split(separator: "\n").map { String($0) }
+        }
+
         var newCSVRows: [String] = []
         
         if csvRows.isEmpty {

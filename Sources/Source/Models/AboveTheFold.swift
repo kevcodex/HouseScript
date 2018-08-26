@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: Clean
 struct AboveTheFold: Codable {
     let payload: Payload
     
