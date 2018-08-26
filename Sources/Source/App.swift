@@ -15,36 +15,36 @@ public class App {
     public func start() {
 
         // MARK: - Get Listing ID
-        let listingQuestion = "Enter the listing ID (The number in the URL)"
-        var listingID = Console.getInput(from: listingQuestion, styled: .blue)
+        let propertyQuestion = "Enter the property ID (The number in the URL)"
+        var propertyID = Console.getInput(from: propertyQuestion, styled: .blue)
         
-        while Int(listingID) == nil {
+        while Int(propertyID) == nil {
             Console.writeMessage("Not a valid Number", styled: .red)
-            listingID = Console.getInput(from: listingQuestion, styled: .blue)
+            propertyID = Console.getInput(from: propertyQuestion, styled: .blue)
         }
         
         // MARK: - Get Property ID
-        let propertyQuestion = "OPTIONAL: Enter the property ID (A number you need to find in Charles) or enter blank if you want to skip"
-        var propertyID = Console.getInput(from: propertyQuestion, styled: .blue)
+        let listingQuestion = "OPTIONAL: Enter the listing ID (A number you need to find in Charles) or enter blank if you want to skip"
+        var listingID = Console.getInput(from: listingQuestion, styled: .blue)
         
-        if !propertyID.isEmpty {
-            while Int(propertyID) == nil {
-                if propertyID.isEmpty {
+        if !listingID.isEmpty {
+            while Int(listingID) == nil {
+                if listingID.isEmpty {
                     break
                 }
                 Console.writeMessage("Not a valid Number", styled: .red)
-                propertyID = Console.getInput(from: propertyQuestion, styled: .blue)
+                listingID = Console.getInput(from: listingQuestion, styled: .blue)
             }
         }
         
         // MARK: - Hit Redfin Endpoint
-        var houseData: HouseData?
+        var aHouseData: HouseData?
         
         let runner = SwiftScriptRunner()
         runner.lock()
         
-        getHouseData { data in
-            houseData = data
+        getHouseData(propertyID: propertyID, listingID: listingID) { data in
+            aHouseData = data
             runner.unlock()
         }
         
@@ -56,22 +56,29 @@ public class App {
         
         let csvFileURL = URL(fileURLWithPath: csvFilePath)
         
-        let publicRecordsInfo = houseData?.belowTheFoldData?.payload.publicRecordsInfo
+        guard let houseData = aHouseData,
+            let belowTheFoldData = houseData.belowTheFoldData,
+            let aboveTheFoldData = houseData.aboveTheFoldData else {
+                Console.writeMessage("Missing Data", styled: .red)
+                return
+        }
+         
+        let publicRecordsInfo = belowTheFoldData.payload.publicRecordsInfo
         
-        let streetAddress = publicRecordsInfo?.addressInfo.street ?? ""
+        let streetAddress = publicRecordsInfo.addressInfo.street
         
-        let listingPrice = houseData?.belowTheFoldData?.payload.propertyHistoryInfo.events.first?.price ?? 0
+        let listingPrice = belowTheFoldData.payload.propertyHistoryInfo.events.first?.price ?? 0
         
-        let yearBuilt = publicRecordsInfo?.basicInfo.yearBuilt ?? 0
+        let yearBuilt = publicRecordsInfo.basicInfo.yearBuilt
         
-        let lotSize = self.lotSize(from: houseData?.aboveTheFoldData, belowTheFold: houseData?.belowTheFoldData)
+        let lotSize = self.lotSize(from: aboveTheFoldData, belowTheFold: belowTheFoldData)
         
-        let sqft = publicRecordsInfo?.basicInfo.totalSqFt ?? 0
+        let sqft = publicRecordsInfo.basicInfo.totalSqFt
         
-        let stories = self.stories(from: houseData?.aboveTheFoldData)
+        let stories = self.stories(from: aboveTheFoldData)
         
-        let bedCount = publicRecordsInfo?.basicInfo.beds ?? 0
-        let bathCount = publicRecordsInfo?.basicInfo.baths ?? 0
+        let bedCount = publicRecordsInfo.basicInfo.beds
+        let bathCount = publicRecordsInfo.basicInfo.baths
         
         do {
             let stringConvertibleArray: [CustomStringConvertible] = [streetAddress, listingPrice, yearBuilt, lotSize, sqft, stories, bedCount, bathCount]
@@ -82,7 +89,9 @@ public class App {
         }
     }
     
-    private func getHouseData(completion: @escaping (HouseData) -> Void) {
+    /// - parameter propertyID: **Required**. You can find this at the end of the house URL. E.g. https://www.redfin.com/CA/Encinitas/1943-Village-Wood-Rd-92024/home/**6390569**
+    /// - parameter listingID: ListingID does not require to have a value. I'm not sure where this value is taken from but You can find it in the param request in Charles. It just adds a bit more info if you include it.
+    private func getHouseData(propertyID: String, listingID: String, completion: @escaping (HouseData) -> Void) {
         
         let dispatchGroup = DispatchGroup()
         
@@ -92,8 +101,8 @@ public class App {
         dispatchGroup.enter()
         NetworkRequest.callAboveTheFold(
             urlString: "https://www.redfin.com/stingray/mobile/api/v1/home/details/aboveTheFold",
-            propertyID: "6390569",
-            listingID: "",
+            propertyID: propertyID,
+            listingID: listingID,
             completion: { result in
                 switch result {
                     
@@ -108,8 +117,8 @@ public class App {
         dispatchGroup.enter()
         NetworkRequest.callBelowTheFold(
             urlString: "https://www.redfin.com/stingray/mobile/api/v1/home/details/belowTheFold",
-            propertyID: "6390569",
-            listingID: "",
+            propertyID: propertyID,
+            listingID: listingID,
             completion: { result in
                 switch result {
                     

@@ -23,7 +23,7 @@ struct NetworkRequest {
     
     static func callAboveTheFold(urlString: String,
                                  propertyID: String,
-                                 listingID: String?,
+                                 listingID: String,
                                  completion: @escaping (Result<AboveTheFold, NetworkError>) -> Void) {
         
         guard let urlRequest = constructURLRequest(urlString: urlString, propertyID: propertyID, listingID: listingID) else {
@@ -59,7 +59,7 @@ struct NetworkRequest {
     
     static func callBelowTheFold(urlString: String,
                                  propertyID: String,
-                                 listingID: String?,
+                                 listingID: String,
                                  completion: @escaping (Result<BelowTheFold, NetworkError>) -> Void) {
         guard let urlRequest = constructURLRequest(urlString: urlString, propertyID: propertyID, listingID: listingID) else {
             completion(Result(error: .invalidURL))
@@ -95,7 +95,7 @@ struct NetworkRequest {
     
     private static func constructURLRequest(urlString: String,
                                             propertyID: String,
-                                            listingID: String?) -> URLRequest? {
+                                            listingID: String) -> URLRequest? {
         
         let accessLevelQuery = URLQueryItem(name: "accessLevel", value: "3")
         let propertyIDQuery = URLQueryItem(name: "propertyId", value: propertyID)
