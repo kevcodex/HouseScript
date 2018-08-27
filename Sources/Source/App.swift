@@ -40,7 +40,7 @@ public class App {
         
         // MARK: - Hit Redfin Endpoint
         let houseData = HouseData()
-        
+        Console.writeMessage("**Fetching House Data")
         let runner = SwiftScriptRunner()
         runner.lock()
         
@@ -57,6 +57,7 @@ public class App {
         runner.wait()
         
         // MARK: - Store into CSV
+        Console.writeMessage("**Store into CSV file")
         let workingDirectory = FileManager.default.currentDirectoryPath
         let csvFilePath = workingDirectory + "/homeData.csv"
         
@@ -93,6 +94,8 @@ public class App {
             let stringConvertibleArray: [CustomStringConvertible] = [streetAddress, eventType, eventDateString, urlString, listingPrice, yearBuilt, lotSize, sqft, stories, bedCount, bathCount]
 
             try CSVWriter.addNewColumns(stringConvertibleArray, to: csvFileURL)
+            
+            Console.writeMessage("**Finished!", styled: .green)
         } catch {
             Console.writeMessage(error)
         }

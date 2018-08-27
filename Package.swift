@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "HouseSearchScript",
+    products: [
+        .executable(name: "kchousescript", targets: ["Run"]),
+        ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.0.0"),
