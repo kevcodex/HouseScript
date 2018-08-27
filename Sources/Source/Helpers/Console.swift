@@ -16,8 +16,9 @@ enum OutputStyle {
 }
 
 class Console {
-    static func writeMessage(_ message: String, styled: OutputStyle = .black) {
-        let textColorReset = "\u{001B}[;m"
+    private static let textColorReset = "\u{001B}[;m"
+    
+    static func writeMessage<T: CustomStringConvertible>(_ message: T, styled: OutputStyle = .black) {
         
         switch styled {
         case .black:
@@ -33,12 +34,15 @@ class Console {
             print("\u{001B}[0;32m\(message)", textColorReset)
             
         case .red:
-            
             print("\u{001B}[0;31m\(message)", textColorReset)
             // Below outputs to the STDERR
             // Kinda like nslog
             //      fputs("\u{001B}[0;31m\(message)\n", stderr)
         }
+    }
+    
+    static func writeMessage(_ error: Error) {
+        print("\u{001B}[0;31m\(error)", textColorReset)
     }
     
     static func writeSpacer() {

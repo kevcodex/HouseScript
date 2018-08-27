@@ -8,11 +8,10 @@ import Foundation
 
 // TODO: - Potentially parse out the map protobuf info, then I can get the listing ID by mapping against the property ID. See URL https://www.redfin.com/stingray/mobile/v2/gis-proto-mobile. It seems like I would need to input some info like coordinates and some filters into this URL.
 // TODO: - Determine days on market before pending and sold
+// TODO: - Repeat until exit
 public class App {
     
-    public init () {
-        
-    }
+    public init () {}
     
     public func start() {
 
@@ -45,8 +44,14 @@ public class App {
         let runner = SwiftScriptRunner()
         runner.lock()
         
-        houseData.fetchData(propertyID: propertyID, listingID: listingID) { _ in
+        houseData.fetchData(propertyID: propertyID, listingID: listingID) { errors in
             runner.unlock()
+            if let errors = errors {
+                errors.forEach({ (error) in
+                    Console.writeMessage(error)
+                    exit(1)
+                })
+            }
         }
         
         runner.wait()
@@ -89,7 +94,7 @@ public class App {
 
             try CSVWriter.addNewColumns(stringConvertibleArray, to: csvFileURL)
         } catch {
-            Console.writeMessage(error.localizedDescription, styled: .red)
+            Console.writeMessage(error)
         }
     }
 }

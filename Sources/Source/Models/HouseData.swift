@@ -22,9 +22,11 @@ extension HouseData {
     
     /// - parameter propertyID: **Required**. You can find this at the end of the house URL. E.g. https://www.redfin.com/CA/Encinitas/1943-Village-Wood-Rd-92024/home/**6390569**
     /// - parameter listingID: ListingID does not require to have a value. This values comes from the protobuf of the map. URL is https://www.redfin.com/stingray/mobile/v2/gis-proto-mobile. You can find it in the param request in Charles. It just adds a bit more info if you include it.
-    func fetchData(propertyID: String, listingID: String, completion: @escaping (HouseData) -> Void) {
+    func fetchData(propertyID: String, listingID: String, completion: @escaping ([Error]?) -> Void) {
         
         let dispatchGroup = DispatchGroup()
+        
+        var errors: [Error] = []
         
         dispatchGroup.enter()
         NetworkRequest.callAboveTheFold(
@@ -42,7 +44,7 @@ extension HouseData {
                 case .success(let response):
                     strongSelf.aboveTheFoldData = response
                 case .failure(let error):
-                    Console.writeMessage(error.localizedDescription, styled: .red)
+                    errors.append(error)
                 }
                 dispatchGroup.leave()
         })
@@ -63,14 +65,14 @@ extension HouseData {
                 case .success(let response):
                     strongSelf.belowTheFoldData = response
                 case .failure(let error):
-                    Console.writeMessage(error.localizedDescription, styled: .red)
+                    errors.append(error)
                 }
                 
                 dispatchGroup.leave()
         })
         
         dispatchGroup.notify(queue: .main) {
-            completion(self)
+            errors.isEmpty ? completion(nil) : completion(errors)
         }
     }
 }
