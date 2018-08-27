@@ -59,6 +59,7 @@ public class App {
         // MARK: - Store into CSV
         Console.writeMessage("**Store into CSV file")
         let workingDirectory = FileManager.default.currentDirectoryPath
+        Console.writeMessage("**Storing into CSV file at path \(workingDirectory)")
         let csvFilePath = workingDirectory + "/homeData.csv"
         
         let csvFileURL = URL(fileURLWithPath: csvFilePath)
