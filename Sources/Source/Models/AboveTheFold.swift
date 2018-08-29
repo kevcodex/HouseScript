@@ -32,7 +32,8 @@ struct AboveTheFold: Codable {
         let mainHouseInfoContainer = try payloadContainer.nestedContainer(keyedBy: MainHouseInfoKeys.self,
                                                                           forKey: .mainHouseInfo)
         
-        selectedAmenities = try mainHouseInfoContainer.decode([SelectedAmenities].self, forKey: .selectedAmenities)
+        selectedAmenities = try mainHouseInfoContainer.decodeIfPresent([SelectedAmenities].self,
+                                                                       forKey: .selectedAmenities)
     }
     
     struct SelectedAmenities: Codable {
