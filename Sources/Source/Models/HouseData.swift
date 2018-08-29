@@ -91,10 +91,10 @@ extension HouseData {
             return lotSize
         }
         
-        for admentities in aboveTheFold.payload.mainHouseInfo.selectedAmenities {
+        aboveTheFold.selectedAmenities?.forEach { admentities in
             if admentities.header == "Lot Size" {
                 let lotSizeString = admentities.content.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890").inverted).replacingOccurrences(of: ",", with: "")
-
+                
                 lotSize = Int(lotSizeString) ?? 0
             }
         }
@@ -103,11 +103,11 @@ extension HouseData {
     }
     
     func stories() -> String {
-        guard let aboveTheFold = aboveTheFoldData else {
+        guard let selectedAmenities = aboveTheFoldData?.selectedAmenities else {
             return ""
         }
         
-        for admentities in aboveTheFold.payload.mainHouseInfo.selectedAmenities {
+        for admentities in selectedAmenities {
             if admentities.header == "Stories" {
                 return admentities.content
             }

@@ -7,20 +7,36 @@
 
 import Foundation
 
-// TODO: Clean
 struct AboveTheFold: Codable {
-    let payload: Payload
+    let selectedAmenities: [SelectedAmenities]?
     
-    struct Payload: Codable {
-        let mainHouseInfo: MainHouseInfo
+    private enum RootKeys: String, CodingKey {
+        case payload
+        case mainHouseInfo
+    }
+    
+    private enum PayloadKeys: String, CodingKey {
+        case mainHouseInfo
+    }
+    
+    private enum MainHouseInfoKeys: String, CodingKey {
+        case selectedAmenities
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: RootKeys.self)
         
-        struct MainHouseInfo: Codable {
-            let selectedAmenities: [SelectedAmenities]
-            
-            struct SelectedAmenities: Codable {
-                let header: String
-                let content: String
-            }
-        }
+        let payloadContainer = try container.nestedContainer(keyedBy: PayloadKeys.self,
+                                                             forKey: .payload)
+        
+        let mainHouseInfoContainer = try payloadContainer.nestedContainer(keyedBy: MainHouseInfoKeys.self,
+                                                                          forKey: .mainHouseInfo)
+        
+        selectedAmenities = try mainHouseInfoContainer.decode([SelectedAmenities].self, forKey: .selectedAmenities)
+    }
+    
+    struct SelectedAmenities: Codable {
+        let header: String
+        let content: String
     }
 }
