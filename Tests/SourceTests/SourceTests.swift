@@ -3,7 +3,7 @@ import XCTest
 
 @testable import Source
 
-final class AppTests: XCTestCase {
+final class SourceTests: XCTestCase {
     func testNothing() {
         
     }
