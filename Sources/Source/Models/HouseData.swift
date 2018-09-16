@@ -29,8 +29,7 @@ extension HouseData {
         var errors: [Error] = []
         
         dispatchGroup.enter()
-        NetworkRequest.callAboveTheFold(
-            urlString: "https://www.redfin.com/stingray/mobile/api/v1/home/details/aboveTheFold",
+        NetworkAPI.callAboveTheFold(
             propertyID: propertyID,
             listingID: listingID,
             completion: { [weak self] result in
@@ -50,8 +49,7 @@ extension HouseData {
         })
         
         dispatchGroup.enter()
-        NetworkRequest.callBelowTheFold(
-            urlString: "https://www.redfin.com/stingray/mobile/api/v1/home/details/belowTheFold",
+        NetworkAPI.callBelowTheFold(
             propertyID: propertyID,
             listingID: listingID,
             completion: { [weak self] result in

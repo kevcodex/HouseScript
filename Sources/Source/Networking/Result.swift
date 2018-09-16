@@ -1,22 +1,23 @@
 //
 //  Result.swift
-//  FOXNOW
+//  SampleProject
 //
-//  Created by Kevin Chen on 5/7/18.
+//  Created by Kirby on 6/19/17.
+//  Copyright © 2017 Kirby. All rights reserved.
 //
 
 import Foundation
 
-/// Generic result type
+// A generic result for success or failure
 public enum Result<T, Error: Swift.Error> {
     case success(T)
     case failure(Error)
     
-    init(value: T) {
+    public init(value: T) {
         self = .success(value)
     }
     
-    init(error: Error) {
+    public init(error: Error) {
         self = .failure(error)
     }
 }

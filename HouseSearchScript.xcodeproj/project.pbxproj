@@ -32,15 +32,18 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4EED5D0C214EDD2000A35365 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED5D07214EDD2000A35365 /* NetworkClient.swift */; };
+		4EED5D0D214EDD2000A35365 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED5D08214EDD2000A35365 /* Result.swift */; };
+		4EED5D0E214EDD2000A35365 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED5D09214EDD2000A35365 /* Response.swift */; };
+		4EED5D0F214EDD2000A35365 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED5D0A214EDD2000A35365 /* NetworkRequest.swift */; };
+		4EED5D10214EDD2000A35365 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EED5D0B214EDD2000A35365 /* NetworkError.swift */; };
 		OBJ_101 /* Source.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "HouseSearchScript::Source::Product" /* Source.framework */; };
 		OBJ_102 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Alamofire::Alamofire::Product" /* Alamofire.framework */; };
 		OBJ_110 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* App.swift */; };
-		OBJ_111 /* Alamofire+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Alamofire+Extensions.swift */; };
 		OBJ_112 /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* CSVWriter.swift */; };
 		OBJ_113 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Console.swift */; };
 		OBJ_114 /* DateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* DateFormatterUtil.swift */; };
-		OBJ_115 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* NetworkRequest.swift */; };
-		OBJ_116 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Result.swift */; };
+		OBJ_115 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* NetworkAPI.swift */; };
 		OBJ_117 /* SwiftScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* SwiftScriptRunner.swift */; };
 		OBJ_118 /* AboveTheFold.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* AboveTheFold.swift */; };
 		OBJ_119 /* BelowTheFold.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* BelowTheFold.swift */; };
@@ -124,17 +127,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EED5D07214EDD2000A35365 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		4EED5D08214EDD2000A35365 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4EED5D09214EDD2000A35365 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		4EED5D0A214EDD2000A35365 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		4EED5D0B214EDD2000A35365 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		"Alamofire::Alamofire::Product" /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HouseSearchScript::Run::Product" /* Run */ = {isa = PBXFileReference; lastKnownFileType = text; path = Run; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HouseSearchScript::Source::Product" /* Source.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Source.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"HouseSearchScript::SourceTests::Product" /* SourceTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_11 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		OBJ_13 /* Alamofire+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extensions.swift"; sourceTree = "<group>"; };
 		OBJ_15 /* CSVWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
 		OBJ_16 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		OBJ_17 /* DateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtil.swift; sourceTree = "<group>"; };
-		OBJ_18 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		OBJ_19 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_18 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		OBJ_20 /* SwiftScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftScriptRunner.swift; sourceTree = "<group>"; };
 		OBJ_22 /* AboveTheFold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboveTheFold.swift; sourceTree = "<group>"; };
 		OBJ_23 /* BelowTheFold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelowTheFold.swift; sourceTree = "<group>"; };
@@ -199,11 +205,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EED5D06214EDD2000A35365 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4EED5D07214EDD2000A35365 /* NetworkClient.swift */,
+				4EED5D08214EDD2000A35365 /* Result.swift */,
+				4EED5D09214EDD2000A35365 /* Response.swift */,
+				4EED5D0A214EDD2000A35365 /* NetworkRequest.swift */,
+				4EED5D0B214EDD2000A35365 /* NetworkError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_11 /* App.swift */,
-				OBJ_12 /* Extensions */,
+				4EED5D06214EDD2000A35365 /* Networking */,
 				OBJ_14 /* Helpers */,
 				OBJ_21 /* Models */,
 			);
@@ -211,22 +229,13 @@
 			path = Sources/Source;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_12 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_13 /* Alamofire+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		OBJ_14 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_15 /* CSVWriter.swift */,
 				OBJ_16 /* Console.swift */,
 				OBJ_17 /* DateFormatterUtil.swift */,
-				OBJ_18 /* NetworkRequest.swift */,
-				OBJ_19 /* Result.swift */,
+				OBJ_18 /* NetworkAPI.swift */,
 				OBJ_20 /* SwiftScriptRunner.swift */,
 			);
 			path = Helpers;
@@ -304,7 +313,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -313,7 +322,6 @@
 				OBJ_28 /* Dependencies */,
 				OBJ_48 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -449,7 +457,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -472,16 +480,19 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_110 /* App.swift in Sources */,
-				OBJ_111 /* Alamofire+Extensions.swift in Sources */,
+				4EED5D10214EDD2000A35365 /* NetworkError.swift in Sources */,
+				4EED5D0D214EDD2000A35365 /* Result.swift in Sources */,
 				OBJ_112 /* CSVWriter.swift in Sources */,
+				4EED5D0F214EDD2000A35365 /* NetworkRequest.swift in Sources */,
 				OBJ_113 /* Console.swift in Sources */,
 				OBJ_114 /* DateFormatterUtil.swift in Sources */,
-				OBJ_115 /* NetworkRequest.swift in Sources */,
-				OBJ_116 /* Result.swift in Sources */,
+				4EED5D0E214EDD2000A35365 /* Response.swift in Sources */,
+				OBJ_115 /* NetworkAPI.swift in Sources */,
 				OBJ_117 /* SwiftScriptRunner.swift in Sources */,
 				OBJ_118 /* AboveTheFold.swift in Sources */,
 				OBJ_119 /* BelowTheFold.swift in Sources */,
 				OBJ_120 /* HouseData.swift in Sources */,
+				4EED5D0C214EDD2000A35365 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
