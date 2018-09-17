@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MiniNe
 
 struct NetworkAPI {
     
@@ -23,7 +24,7 @@ struct NetworkAPI {
         
         let request = AboveTheFoldNetworkRequest(parameters: parameters)
         
-        let client = NetworkClient()
+        let client = MiniNeClient()
         
         client.send(request: request) { (result) in
             switch result {
@@ -57,7 +58,7 @@ struct NetworkAPI {
         
         let request = BelowTheFoldNetworkRequest(parameters: parameters)
         
-        let client = NetworkClient()
+        let client = MiniNeClient()
         
         client.send(request: request) { (result) in
             switch result {
