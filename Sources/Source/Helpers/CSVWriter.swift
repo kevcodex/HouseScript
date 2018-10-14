@@ -57,7 +57,8 @@ struct CSVWriter {
     static func addNewRows(_ rows: [CustomStringConvertible], to url: URL) throws {
         
         for row in rows {
-            guard let data = row.description.data(using: .utf8) else {
+            let newRow = row.description + ",\n"
+            guard let data = newRow.data(using: .utf8) else {
                 continue
             }
             
