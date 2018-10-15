@@ -5,6 +5,7 @@
 //  Created by Kevin Chen on 6/26/18.
 
 import Foundation
+import ScriptHelpers
 
 // TODO: - Potentially parse out the map protobuf info, then I can get the listing ID by mapping against the property ID. See URL https://www.redfin.com/stingray/mobile/v2/gis-proto-mobile. It seems like I would need to input some info like coordinates and some filters into this URL.
 // TODO: - Determine days on market before pending and sold

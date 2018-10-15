@@ -5,25 +5,26 @@
    objects = {
       "HouseSearchScript::HouseSearchScriptPackageTests::ProductTarget" = {
          isa = "PBXAggregateTarget";
-         buildConfigurationList = "OBJ_46";
+         buildConfigurationList = "OBJ_50";
          buildPhases = (
          );
          dependencies = (
-            "OBJ_49",
+            "OBJ_53"
          );
          name = "HouseSearchScriptPackageTests";
          productName = "HouseSearchScriptPackageTests";
       };
       "HouseSearchScript::Run" = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_69";
+         buildConfigurationList = "OBJ_73";
          buildPhases = (
-            "OBJ_72",
-            "OBJ_74",
+            "OBJ_76",
+            "OBJ_78"
          );
          dependencies = (
-            "OBJ_77",
-            "OBJ_79",
+            "OBJ_82",
+            "OBJ_84",
+            "OBJ_86"
          );
          name = "Run";
          productName = "Run";
@@ -37,13 +38,14 @@
       };
       "HouseSearchScript::Source" = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_80";
+         buildConfigurationList = "OBJ_101";
          buildPhases = (
-            "OBJ_83",
-            "OBJ_93",
+            "OBJ_104",
+            "OBJ_111"
          );
          dependencies = (
-            "OBJ_95",
+            "OBJ_114",
+            "OBJ_115"
          );
          name = "Source";
          productName = "Source";
@@ -57,14 +59,15 @@
       };
       "HouseSearchScript::SourceTests" = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_96";
+         buildConfigurationList = "OBJ_116";
          buildPhases = (
-            "OBJ_99",
-            "OBJ_101",
+            "OBJ_119",
+            "OBJ_121"
          );
          dependencies = (
-            "OBJ_104",
-            "OBJ_105",
+            "OBJ_125",
+            "OBJ_126",
+            "OBJ_127"
          );
          name = "SourceTests";
          productName = "SourceTests";
@@ -78,9 +81,9 @@
       };
       "HouseSearchScript::SwiftPMPackageDescription" = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_40";
+         buildConfigurationList = "OBJ_44";
          buildPhases = (
-            "OBJ_43",
+            "OBJ_47"
          );
          dependencies = (
          );
@@ -90,21 +93,21 @@
       };
       "HouseSearchScript::kchousescript::ProductTarget" = {
          isa = "PBXAggregateTarget";
-         buildConfigurationList = "OBJ_107";
+         buildConfigurationList = "OBJ_129";
          buildPhases = (
          );
          dependencies = (
-            "OBJ_110",
+            "OBJ_132"
          );
          name = "kchousescript";
          productName = "kchousescript";
       };
       "MiniNe::MiniNe" = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_52";
+         buildConfigurationList = "OBJ_56";
          buildPhases = (
-            "OBJ_55",
-            "OBJ_61",
+            "OBJ_59",
+            "OBJ_65"
          );
          dependencies = (
          );
@@ -120,9 +123,9 @@
       };
       "MiniNe::SwiftPMPackageDescription" = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_63";
+         buildConfigurationList = "OBJ_67";
          buildPhases = (
-            "OBJ_66",
+            "OBJ_70"
          );
          dependencies = (
          );
@@ -140,10 +143,10 @@
          developmentRegion = "English";
          hasScannedForEncodings = "0";
          knownRegions = (
-            "en",
+            "en"
          );
          mainGroup = "OBJ_5";
-         productRefGroup = "OBJ_34";
+         productRefGroup = "OBJ_37";
          projectDirPath = ".";
          targets = (
             "HouseSearchScript::SwiftPMPackageDescription",
@@ -151,9 +154,11 @@
             "MiniNe::MiniNe",
             "MiniNe::SwiftPMPackageDescription",
             "HouseSearchScript::Run",
+            "ScriptHelpers::ScriptHelpers",
+            "ScriptHelpers::SwiftPMPackageDescription",
             "HouseSearchScript::Source",
             "HouseSearchScript::SourceTests",
-            "HouseSearchScript::kchousescript::ProductTarget",
+            "HouseSearchScript::kchousescript::ProductTarget"
          );
       };
       "OBJ_10" = {
@@ -161,7 +166,7 @@
          children = (
             "OBJ_11",
             "OBJ_12",
-            "OBJ_18",
+            "OBJ_15"
          );
          name = "Source";
          path = "Sources/Source";
@@ -169,51 +174,121 @@
       };
       "OBJ_100" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_24";
+         fileRef = "OBJ_28";
       };
       "OBJ_101" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_102",
-            "OBJ_103",
-         );
-      };
-      "OBJ_102" = {
-         isa = "PBXBuildFile";
-         fileRef = "HouseSearchScript::Source::Product";
-      };
-      "OBJ_103" = {
-         isa = "PBXBuildFile";
-         fileRef = "MiniNe::MiniNe::Product";
-      };
-      "OBJ_104" = {
-         isa = "PBXTargetDependency";
-         target = "HouseSearchScript::Source";
-      };
-      "OBJ_105" = {
-         isa = "PBXTargetDependency";
-         target = "MiniNe::MiniNe";
-      };
-      "OBJ_107" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            "OBJ_108",
-            "OBJ_109",
+            "OBJ_102",
+            "OBJ_103"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
-      "OBJ_108" = {
+      "OBJ_102" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/Source_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "Source";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "Source";
          };
          name = "Debug";
       };
-      "OBJ_109" = {
+      "OBJ_103" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/Source_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "Source";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SKIP_INSTALL = "YES";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "Source";
          };
          name = "Release";
+      };
+      "OBJ_104" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_105",
+            "OBJ_106",
+            "OBJ_107",
+            "OBJ_108",
+            "OBJ_109",
+            "OBJ_110"
+         );
+      };
+      "OBJ_105" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_11";
+      };
+      "OBJ_106" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_13";
+      };
+      "OBJ_107" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_14";
+      };
+      "OBJ_108" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_16";
+      };
+      "OBJ_109" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_17";
       };
       "OBJ_11" = {
          isa = "PBXFileReference";
@@ -221,146 +296,318 @@
          sourceTree = "<group>";
       };
       "OBJ_110" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_18";
+      };
+      "OBJ_111" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            "OBJ_112",
+            "OBJ_113"
+         );
+      };
+      "OBJ_112" = {
+         isa = "PBXBuildFile";
+         fileRef = "ScriptHelpers::ScriptHelpers::Product";
+      };
+      "OBJ_113" = {
+         isa = "PBXBuildFile";
+         fileRef = "MiniNe::MiniNe::Product";
+      };
+      "OBJ_114" = {
          isa = "PBXTargetDependency";
-         target = "HouseSearchScript::Run";
+         target = "ScriptHelpers::ScriptHelpers";
+      };
+      "OBJ_115" = {
+         isa = "PBXTargetDependency";
+         target = "MiniNe::MiniNe";
+      };
+      "OBJ_116" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_117",
+            "OBJ_118"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_117" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_MODULES = "YES";
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/SourceTests_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "SourceTests";
+         };
+         name = "Debug";
+      };
+      "OBJ_118" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_MODULES = "YES";
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/SourceTests_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks"
+            );
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "SourceTests";
+         };
+         name = "Release";
+      };
+      "OBJ_119" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_120"
+         );
       };
       "OBJ_12" = {
          isa = "PBXGroup";
          children = (
             "OBJ_13",
-            "OBJ_14",
-            "OBJ_15",
-            "OBJ_16",
-            "OBJ_17",
+            "OBJ_14"
          );
          name = "Helpers";
          path = "Helpers";
          sourceTree = "<group>";
       };
+      "OBJ_120" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_21";
+      };
+      "OBJ_121" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+            "OBJ_122",
+            "OBJ_123",
+            "OBJ_124"
+         );
+      };
+      "OBJ_122" = {
+         isa = "PBXBuildFile";
+         fileRef = "HouseSearchScript::Source::Product";
+      };
+      "OBJ_123" = {
+         isa = "PBXBuildFile";
+         fileRef = "ScriptHelpers::ScriptHelpers::Product";
+      };
+      "OBJ_124" = {
+         isa = "PBXBuildFile";
+         fileRef = "MiniNe::MiniNe::Product";
+      };
+      "OBJ_125" = {
+         isa = "PBXTargetDependency";
+         target = "HouseSearchScript::Source";
+      };
+      "OBJ_126" = {
+         isa = "PBXTargetDependency";
+         target = "ScriptHelpers::ScriptHelpers";
+      };
+      "OBJ_127" = {
+         isa = "PBXTargetDependency";
+         target = "MiniNe::MiniNe";
+      };
+      "OBJ_129" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_130",
+            "OBJ_131"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
       "OBJ_13" = {
-         isa = "PBXFileReference";
-         path = "CSVWriter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_14" = {
-         isa = "PBXFileReference";
-         path = "Console.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_15" = {
          isa = "PBXFileReference";
          path = "DateFormatterUtil.swift";
          sourceTree = "<group>";
       };
-      "OBJ_16" = {
+      "OBJ_130" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Debug";
+      };
+      "OBJ_131" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Release";
+      };
+      "OBJ_132" = {
+         isa = "PBXTargetDependency";
+         target = "HouseSearchScript::Run";
+      };
+      "OBJ_14" = {
          isa = "PBXFileReference";
          path = "NetworkAPI.swift";
          sourceTree = "<group>";
       };
-      "OBJ_17" = {
-         isa = "PBXFileReference";
-         path = "SwiftScriptRunner.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_18" = {
+      "OBJ_15" = {
          isa = "PBXGroup";
          children = (
-            "OBJ_19",
-            "OBJ_20",
-            "OBJ_21",
+            "OBJ_16",
+            "OBJ_17",
+            "OBJ_18"
          );
          name = "Models";
          path = "Models";
          sourceTree = "<group>";
       };
-      "OBJ_19" = {
+      "OBJ_16" = {
          isa = "PBXFileReference";
          path = "AboveTheFold.swift";
          sourceTree = "<group>";
+      };
+      "OBJ_17" = {
+         isa = "PBXFileReference";
+         path = "BelowTheFold.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_18" = {
+         isa = "PBXFileReference";
+         path = "HouseData.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_19" = {
+         isa = "PBXGroup";
+         children = (
+            "OBJ_20"
+         );
+         name = "Tests";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_2" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
             "OBJ_3",
-            "OBJ_4",
+            "OBJ_4"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
       "OBJ_20" = {
-         isa = "PBXFileReference";
-         path = "BelowTheFold.swift";
-         sourceTree = "<group>";
+         isa = "PBXGroup";
+         children = (
+            "OBJ_21"
+         );
+         name = "SourceTests";
+         path = "Tests/SourceTests";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_21" = {
          isa = "PBXFileReference";
-         path = "HouseData.swift";
+         path = "SourceTests.swift";
          sourceTree = "<group>";
       };
       "OBJ_22" = {
          isa = "PBXGroup";
          children = (
             "OBJ_23",
-         );
-         name = "Tests";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_23" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_24",
-         );
-         name = "SourceTests";
-         path = "Tests/SourceTests";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_24" = {
-         isa = "PBXFileReference";
-         path = "SourceTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_25" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_26",
+            "OBJ_29"
          );
          name = "Dependencies";
          path = "";
          sourceTree = "<group>";
       };
-      "OBJ_26" = {
+      "OBJ_23" = {
          isa = "PBXGroup";
          children = (
-            "OBJ_27",
-            "OBJ_33",
+            "OBJ_24",
+            "OBJ_28"
          );
-         name = "MiniNe 1.0.0";
+         name = "ScriptHelpers 1.1.1";
          path = "";
          sourceTree = "SOURCE_ROOT";
       };
-      "OBJ_27" = {
+      "OBJ_24" = {
          isa = "PBXGroup";
          children = (
-            "OBJ_28",
-            "OBJ_29",
-            "OBJ_30",
-            "OBJ_31",
-            "OBJ_32",
+            "OBJ_25",
+            "OBJ_26",
+            "OBJ_27"
          );
-         name = "MiniNe";
-         path = ".build/checkouts/MiniNe--5089494226399806203/Sources/MiniNe";
+         name = "ScriptHelpers";
+         path = ".build/checkouts/ScriptHelpers-854268927002303692/Sources/ScriptHelpers";
          sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_25" = {
+         isa = "PBXFileReference";
+         path = "CSVWriter.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_26" = {
+         isa = "PBXFileReference";
+         path = "Console.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_27" = {
+         isa = "PBXFileReference";
+         path = "SwiftScriptRunner.swift";
+         sourceTree = "<group>";
       };
       "OBJ_28" = {
          isa = "PBXFileReference";
-         path = "MiniNeClient.swift";
+         explicitFileType = "sourcecode.swift";
+         name = "Package.swift";
+         path = "/Users/kirby/Documents/KNC_Creative/Swift_Scripting/Projects/HouseSearchScript/.build/checkouts/ScriptHelpers-854268927002303692/Package.swift";
          sourceTree = "<group>";
       };
       "OBJ_29" = {
-         isa = "PBXFileReference";
-         path = "MiniNeError.swift";
-         sourceTree = "<group>";
+         isa = "PBXGroup";
+         children = (
+            "OBJ_30",
+            "OBJ_36"
+         );
+         name = "MiniNe 1.1.0";
+         path = "";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_3" = {
          isa = "XCBuildConfiguration";
@@ -372,10 +619,14 @@
             DYLIB_INSTALL_NAME_BASE = "@rpath";
             ENABLE_NS_ASSERTIONS = "YES";
             GCC_OPTIMIZATION_LEVEL = "0";
+            GCC_PREPROCESSOR_DEFINITIONS = (
+               "DEBUG=1",
+               "$(inherited)"
+            );
             MACOSX_DEPLOYMENT_TARGET = "10.10";
             ONLY_ACTIVE_ARCH = "YES";
             OTHER_SWIFT_FLAGS = (
-               "-DXcode",
+               "-DXcode"
             );
             PRODUCT_NAME = "$(TARGET_NAME)";
             SDKROOT = "macosx";
@@ -386,43 +637,70 @@
                "appletvos",
                "appletvsimulator",
                "watchos",
-               "watchsimulator",
+               "watchsimulator"
             );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "SWIFT_PACKAGE",
+               "DEBUG"
+            );
             SWIFT_OPTIMIZATION_LEVEL = "-Onone";
             USE_HEADERMAP = "NO";
          };
          name = "Debug";
       };
       "OBJ_30" = {
-         isa = "PBXFileReference";
-         path = "NetworkRequest.swift";
-         sourceTree = "<group>";
+         isa = "PBXGroup";
+         children = (
+            "OBJ_31",
+            "OBJ_32",
+            "OBJ_33",
+            "OBJ_34",
+            "OBJ_35"
+         );
+         name = "MiniNe";
+         path = ".build/checkouts/MiniNe--5089494226399806203/Sources/MiniNe";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_31" = {
          isa = "PBXFileReference";
-         path = "Response.swift";
+         path = "MiniNeClient.swift";
          sourceTree = "<group>";
       };
       "OBJ_32" = {
          isa = "PBXFileReference";
-         path = "Result.swift";
+         path = "MiniNeError.swift";
          sourceTree = "<group>";
       };
       "OBJ_33" = {
+         isa = "PBXFileReference";
+         path = "NetworkRequest.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_34" = {
+         isa = "PBXFileReference";
+         path = "Response.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_35" = {
+         isa = "PBXFileReference";
+         path = "Result.swift";
+         sourceTree = "<group>";
+      };
+      "OBJ_36" = {
          isa = "PBXFileReference";
          explicitFileType = "sourcecode.swift";
          name = "Package.swift";
          path = "/Users/kirby/Documents/KNC_Creative/Swift_Scripting/Projects/HouseSearchScript/.build/checkouts/MiniNe--5089494226399806203/Package.swift";
          sourceTree = "<group>";
       };
-      "OBJ_34" = {
+      "OBJ_37" = {
          isa = "PBXGroup";
          children = (
-            "HouseSearchScript::Run::Product",
             "HouseSearchScript::SourceTests::Product",
-            "MiniNe::MiniNe::Product",
+            "HouseSearchScript::Run::Product",
             "HouseSearchScript::Source::Product",
+            "ScriptHelpers::ScriptHelpers::Product",
+            "MiniNe::MiniNe::Product"
          );
          name = "Products";
          path = "";
@@ -439,7 +717,7 @@
             GCC_OPTIMIZATION_LEVEL = "s";
             MACOSX_DEPLOYMENT_TARGET = "10.10";
             OTHER_SWIFT_FLAGS = (
-               "-DXcode",
+               "-DXcode"
             );
             PRODUCT_NAME = "$(TARGET_NAME)";
             SDKROOT = "macosx";
@@ -450,208 +728,200 @@
                "appletvos",
                "appletvsimulator",
                "watchos",
-               "watchsimulator",
+               "watchsimulator"
             );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "SWIFT_PACKAGE"
+            );
             SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
             USE_HEADERMAP = "NO";
          };
          name = "Release";
       };
-      "OBJ_40" = {
+      "OBJ_44" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            "OBJ_41",
-            "OBJ_42",
+            "OBJ_45",
+            "OBJ_46"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
-      "OBJ_41" = {
+      "OBJ_45" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             LD = "/usr/bin/true";
             OTHER_SWIFT_FLAGS = (
                "-swift-version",
-               "4",
+               "4.2",
                "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
                "-target",
                "x86_64-apple-macosx10.10",
                "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
             );
-            SWIFT_VERSION = "4.0";
+            SWIFT_VERSION = "4.2";
          };
          name = "Debug";
-      };
-      "OBJ_42" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk",
-            );
-            SWIFT_VERSION = "4.0";
-         };
-         name = "Release";
-      };
-      "OBJ_43" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_44",
-         );
-      };
-      "OBJ_44" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_6";
       };
       "OBJ_46" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_47",
-            "OBJ_48",
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_47" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
-         };
-         name = "Debug";
-      };
-      "OBJ_48" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "4.2",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+            );
+            SWIFT_VERSION = "4.2";
          };
          name = "Release";
       };
-      "OBJ_49" = {
-         isa = "PBXTargetDependency";
-         target = "HouseSearchScript::SourceTests";
+      "OBJ_47" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_48"
+         );
+      };
+      "OBJ_48" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_6";
       };
       "OBJ_5" = {
          isa = "PBXGroup";
          children = (
             "OBJ_6",
             "OBJ_7",
+            "OBJ_19",
             "OBJ_22",
-            "OBJ_25",
-            "OBJ_34",
+            "OBJ_37"
          );
          path = "";
          sourceTree = "<group>";
       };
-      "OBJ_52" = {
+      "OBJ_50" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            "OBJ_53",
-            "OBJ_54",
+            "OBJ_51",
+            "OBJ_52"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
+      "OBJ_51" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Debug";
+      };
+      "OBJ_52" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Release";
+      };
       "OBJ_53" = {
+         isa = "PBXTargetDependency";
+         target = "HouseSearchScript::SourceTests";
+      };
+      "OBJ_56" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_57",
+            "OBJ_58"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_57" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             ENABLE_TESTABILITY = "YES";
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
             );
             HEADER_SEARCH_PATHS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             INFOPLIST_FILE = "HouseSearchScript.xcodeproj/MiniNe_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
             );
             OTHER_CFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_LDFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             PRODUCT_BUNDLE_IDENTIFIER = "MiniNe";
             PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
             PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
             SKIP_INSTALL = "YES";
-            SWIFT_VERSION = "4.0";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
             TARGET_NAME = "MiniNe";
          };
          name = "Debug";
       };
-      "OBJ_54" = {
+      "OBJ_58" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             ENABLE_TESTABILITY = "YES";
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
             );
             HEADER_SEARCH_PATHS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             INFOPLIST_FILE = "HouseSearchScript.xcodeproj/MiniNe_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
             );
             OTHER_CFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_LDFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             PRODUCT_BUNDLE_IDENTIFIER = "MiniNe";
             PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
             PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
             SKIP_INSTALL = "YES";
-            SWIFT_VERSION = "4.0";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
             TARGET_NAME = "MiniNe";
          };
          name = "Release";
       };
-      "OBJ_55" = {
+      "OBJ_59" = {
          isa = "PBXSourcesBuildPhase";
          files = (
-            "OBJ_56",
-            "OBJ_57",
-            "OBJ_58",
-            "OBJ_59",
             "OBJ_60",
+            "OBJ_61",
+            "OBJ_62",
+            "OBJ_63",
+            "OBJ_64"
          );
-      };
-      "OBJ_56" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_28";
-      };
-      "OBJ_57" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_29";
-      };
-      "OBJ_58" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_30";
-      };
-      "OBJ_59" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_31";
       };
       "OBJ_6" = {
          isa = "PBXFileReference";
@@ -661,307 +931,306 @@
       };
       "OBJ_60" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_32";
+         fileRef = "OBJ_31";
       };
       "OBJ_61" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_32";
+      };
+      "OBJ_62" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_33";
+      };
+      "OBJ_63" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_34";
+      };
+      "OBJ_64" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_35";
+      };
+      "OBJ_65" = {
          isa = "PBXFrameworksBuildPhase";
          files = (
          );
       };
-      "OBJ_63" = {
+      "OBJ_67" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            "OBJ_64",
-            "OBJ_65",
+            "OBJ_68",
+            "OBJ_69"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
-      "OBJ_64" = {
+      "OBJ_68" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             LD = "/usr/bin/true";
             OTHER_SWIFT_FLAGS = (
                "-swift-version",
-               "4",
+               "4.2",
                "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
                "-target",
                "x86_64-apple-macosx10.10",
                "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
             );
-            SWIFT_VERSION = "4.0";
+            SWIFT_VERSION = "4.2";
          };
          name = "Debug";
       };
-      "OBJ_65" = {
+      "OBJ_69" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             LD = "/usr/bin/true";
             OTHER_SWIFT_FLAGS = (
                "-swift-version",
-               "4",
+               "4.2",
                "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
                "-target",
                "x86_64-apple-macosx10.10",
                "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
             );
-            SWIFT_VERSION = "4.0";
+            SWIFT_VERSION = "4.2";
          };
          name = "Release";
-      };
-      "OBJ_66" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_67",
-         );
-      };
-      "OBJ_67" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_33";
-      };
-      "OBJ_69" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_70",
-            "OBJ_71",
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
       };
       "OBJ_7" = {
          isa = "PBXGroup";
          children = (
             "OBJ_8",
-            "OBJ_10",
+            "OBJ_10"
          );
          name = "Sources";
          path = "";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_70" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_71"
+         );
+      };
+      "OBJ_71" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_36";
+      };
+      "OBJ_73" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_74",
+            "OBJ_75"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_74" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
             );
             HEADER_SEARCH_PATHS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             INFOPLIST_FILE = "HouseSearchScript.xcodeproj/Run_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-               "@executable_path",
+               "@executable_path"
             );
             OTHER_CFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_LDFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
             );
             SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
             SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
-            SWIFT_VERSION = "4.0";
+            SWIFT_VERSION = "4.2";
             TARGET_NAME = "Run";
          };
          name = "Debug";
       };
-      "OBJ_71" = {
+      "OBJ_75" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
             );
             HEADER_SEARCH_PATHS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             INFOPLIST_FILE = "HouseSearchScript.xcodeproj/Run_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-               "@executable_path",
+               "@executable_path"
             );
             OTHER_CFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_LDFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
             );
             SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
             SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
-            SWIFT_VERSION = "4.0";
+            SWIFT_VERSION = "4.2";
             TARGET_NAME = "Run";
          };
          name = "Release";
       };
-      "OBJ_72" = {
+      "OBJ_76" = {
          isa = "PBXSourcesBuildPhase";
          files = (
-            "OBJ_73",
+            "OBJ_77"
          );
       };
-      "OBJ_73" = {
+      "OBJ_77" = {
          isa = "PBXBuildFile";
          fileRef = "OBJ_9";
       };
-      "OBJ_74" = {
+      "OBJ_78" = {
          isa = "PBXFrameworksBuildPhase";
          files = (
-            "OBJ_75",
-            "OBJ_76",
+            "OBJ_79",
+            "OBJ_80",
+            "OBJ_81"
          );
       };
-      "OBJ_75" = {
+      "OBJ_79" = {
          isa = "PBXBuildFile";
          fileRef = "HouseSearchScript::Source::Product";
-      };
-      "OBJ_76" = {
-         isa = "PBXBuildFile";
-         fileRef = "MiniNe::MiniNe::Product";
-      };
-      "OBJ_77" = {
-         isa = "PBXTargetDependency";
-         target = "HouseSearchScript::Source";
-      };
-      "OBJ_79" = {
-         isa = "PBXTargetDependency";
-         target = "MiniNe::MiniNe";
       };
       "OBJ_8" = {
          isa = "PBXGroup";
          children = (
-            "OBJ_9",
+            "OBJ_9"
          );
          name = "Run";
          path = "Sources/Run";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_80" = {
+         isa = "PBXBuildFile";
+         fileRef = "ScriptHelpers::ScriptHelpers::Product";
+      };
+      "OBJ_81" = {
+         isa = "PBXBuildFile";
+         fileRef = "MiniNe::MiniNe::Product";
+      };
+      "OBJ_82" = {
+         isa = "PBXTargetDependency";
+         target = "HouseSearchScript::Source";
+      };
+      "OBJ_84" = {
+         isa = "PBXTargetDependency";
+         target = "ScriptHelpers::ScriptHelpers";
+      };
+      "OBJ_86" = {
+         isa = "PBXTargetDependency";
+         target = "MiniNe::MiniNe";
+      };
+      "OBJ_87" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            "OBJ_81",
-            "OBJ_82",
+            "OBJ_88",
+            "OBJ_89"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
-      "OBJ_81" = {
+      "OBJ_88" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             ENABLE_TESTABILITY = "YES";
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
             );
             HEADER_SEARCH_PATHS = (
-               "$(inherited)",
+               "$(inherited)"
             );
-            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/Source_Info.plist";
+            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/ScriptHelpers_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
             );
             OTHER_CFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_LDFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
-            PRODUCT_BUNDLE_IDENTIFIER = "Source";
+            PRODUCT_BUNDLE_IDENTIFIER = "ScriptHelpers";
             PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
             PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
             SKIP_INSTALL = "YES";
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "Source";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "ScriptHelpers";
          };
          name = "Debug";
       };
-      "OBJ_82" = {
+      "OBJ_89" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             ENABLE_TESTABILITY = "YES";
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
             );
             HEADER_SEARCH_PATHS = (
-               "$(inherited)",
+               "$(inherited)"
             );
-            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/Source_Info.plist";
+            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/ScriptHelpers_Info.plist";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
             );
             OTHER_CFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_LDFLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "$(inherited)"
             );
-            PRODUCT_BUNDLE_IDENTIFIER = "Source";
+            PRODUCT_BUNDLE_IDENTIFIER = "ScriptHelpers";
             PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
             PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
             SKIP_INSTALL = "YES";
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "Source";
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "4.2";
+            TARGET_NAME = "ScriptHelpers";
          };
          name = "Release";
-      };
-      "OBJ_83" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_84",
-            "OBJ_85",
-            "OBJ_86",
-            "OBJ_87",
-            "OBJ_88",
-            "OBJ_89",
-            "OBJ_90",
-            "OBJ_91",
-            "OBJ_92",
-         );
-      };
-      "OBJ_84" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_11";
-      };
-      "OBJ_85" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_13";
-      };
-      "OBJ_86" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_14";
-      };
-      "OBJ_87" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_15";
-      };
-      "OBJ_88" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_16";
-      };
-      "OBJ_89" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_17";
       };
       "OBJ_9" = {
          isa = "PBXFileReference";
@@ -969,36 +1238,35 @@
          sourceTree = "<group>";
       };
       "OBJ_90" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_19";
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_91",
+            "OBJ_92",
+            "OBJ_93"
+         );
       };
       "OBJ_91" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_20";
+         fileRef = "OBJ_25";
       };
       "OBJ_92" = {
          isa = "PBXBuildFile";
-         fileRef = "OBJ_21";
+         fileRef = "OBJ_26";
       };
       "OBJ_93" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_94",
-         );
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_27";
       };
       "OBJ_94" = {
-         isa = "PBXBuildFile";
-         fileRef = "MiniNe::MiniNe::Product";
-      };
-      "OBJ_95" = {
-         isa = "PBXTargetDependency";
-         target = "MiniNe::MiniNe";
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
       };
       "OBJ_96" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
             "OBJ_97",
-            "OBJ_98",
+            "OBJ_98"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
@@ -1006,70 +1274,75 @@
       "OBJ_97" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-            );
-            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/SourceTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks",
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
+            LD = "/usr/bin/true";
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "-swift-version",
+               "4.2",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
             );
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "SourceTests";
+            SWIFT_VERSION = "4.2";
          };
          name = "Debug";
       };
       "OBJ_98" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-            );
-            INFOPLIST_FILE = "HouseSearchScript.xcodeproj/SourceTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks",
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
+            LD = "/usr/bin/true";
             OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
+               "-swift-version",
+               "4.2",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
             );
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "SourceTests";
+            SWIFT_VERSION = "4.2";
          };
          name = "Release";
       };
       "OBJ_99" = {
          isa = "PBXSourcesBuildPhase";
          files = (
-            "OBJ_100",
+            "OBJ_100"
          );
+      };
+      "ScriptHelpers::ScriptHelpers" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_87";
+         buildPhases = (
+            "OBJ_90",
+            "OBJ_94"
+         );
+         dependencies = (
+         );
+         name = "ScriptHelpers";
+         productName = "ScriptHelpers";
+         productReference = "ScriptHelpers::ScriptHelpers::Product";
+         productType = "com.apple.product-type.framework";
+      };
+      "ScriptHelpers::ScriptHelpers::Product" = {
+         isa = "PBXFileReference";
+         path = "ScriptHelpers.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "ScriptHelpers::SwiftPMPackageDescription" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_96";
+         buildPhases = (
+            "OBJ_99"
+         );
+         dependencies = (
+         );
+         name = "ScriptHelpersPackageDescription";
+         productName = "ScriptHelpersPackageDescription";
+         productType = "com.apple.product-type.framework";
       };
    };
    rootObject = "OBJ_1";
