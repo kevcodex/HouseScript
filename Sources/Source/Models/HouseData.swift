@@ -83,7 +83,7 @@ extension HouseData {
                 return 0
         }
         
-        var lotSize = belowTheFold.payload.publicRecordsInfo.basicInfo.lotSqFt
+        var lotSize = belowTheFold.payload.publicRecordsInfo.basicInfo.lotSqFt ?? 0
         
         if lotSize != 0 {
             return lotSize

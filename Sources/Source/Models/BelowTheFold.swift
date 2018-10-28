@@ -23,10 +23,10 @@ struct BelowTheFold: Codable {
             struct BasicInfo: Codable {
                 let beds: Int
                 let baths: Double
-                let yearBuilt: Int
+                let yearBuilt: Int?
                 let sqFtFinished: Int
                 let totalSqFt: Int
-                let lotSqFt: Int
+                let lotSqFt: Int?
             }
             
             struct AddressInfo: Codable {

@@ -80,7 +80,7 @@ public class App {
         let eventDateString = latestEvent?.eventDateString ?? ""
         let listingPrice = latestEvent?.price ?? 0
         
-        let yearBuilt = publicRecordsInfo.basicInfo.yearBuilt
+        let yearBuilt = publicRecordsInfo.basicInfo.yearBuilt ?? 0
         
         let lotSize = houseData.lotSize()
         
@@ -96,7 +96,7 @@ public class App {
 
             try CSVWriter.addNewColumns(stringConvertibleArray, to: csvFileURL)
             
-            Console.writeMessage("**Finished!", styled: .green)
+            Console.writeMessage("**Finished! List from top to bottom (if available) is: streetAddress, latest event type, latest event date, url link, listing price, year built, lot size, sqft, stories, bedCount, bathCount", styled: .green)
         } catch {
             Console.writeMessage(error)
         }
